@@ -4,8 +4,8 @@ block content
     div(class="card")
         div(class="card-header")
             h4 Message
-        div(class="card-block", style="height:300px;")
+        div(class="card-block w-75", style="height:300px;")
             p(class="card-text")
                 each key in title
                     p= key.message
-            a(class="btn btn-primary") Back to New Message
+        button(href="https://frozen-lowlands-75250.herokuapp.com/newmessage", class="btn btn-success") Back to New Message
