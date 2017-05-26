@@ -1,8 +1,11 @@
 extends layout
+extends _bootstrap
+
 
 block content
     h1= title
     form#formAddUser(name="addmessage",method="post",action="/addmessage")
-        input#inputUserEmail(type="text", placeholder="phone number", name="usernumber")
-        input#inputUserMessage(type="text", placeholder="message", name="usermessage")
+        +input#inputUserEmail(type="text", placeholder="phone number", name="usernumber")
+        +input#inputUserMessage(type="text", placeholder="message", name="usermessage")
         button#btnSubmit(type="submit") submit
+        +btn#btnSubmit(type="submit") submit
