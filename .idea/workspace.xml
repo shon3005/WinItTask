@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="009d06b9-edd4-4a53-a791-e459675d5be7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/diagnostic.data/metrics.2017-05-25T19-55-54Z-00000" afterPath="$PROJECT_DIR$/data/diagnostic.data/metrics.2017-05-25T19-55-54Z-00000" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/diagnostic.data/metrics.interim" afterPath="$PROJECT_DIR$/data/diagnostic.data/metrics.interim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/message.jade" afterPath="$PROJECT_DIR$/views/message.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/newmessage.jade" afterPath="$PROJECT_DIR$/views/newmessage.jade" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -74,8 +71,8 @@
       <file leaf-file-name="message.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/message.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+            <state relative-caret-position="105">
+              <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -363,12 +360,12 @@
       <option name="presentableId" value="Default" />
       <updated>1495740989669</updated>
       <workItem from="1495740991213" duration="17925000" />
-      <workItem from="1495775232990" duration="5227000" />
+      <workItem from="1495775232990" duration="5385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23152000" />
+    <option name="totallyTimeSpent" value="23310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="712" extended-state="6" />
@@ -569,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/message.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        <state relative-caret-position="105">
+          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
           <folding />
         </state>
       </provider>

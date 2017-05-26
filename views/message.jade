@@ -4,8 +4,8 @@ block content
     div(class="card")
         div(class="card-header")
             h4 Message
-        div(class="card-block")
-            p(class="card-text")
+        div(class="card-block", style="height:300px;")
+            p(class="card-text h-100")
                 each key in title
                     p= key.message
             a(class="btn btn-primary") Back to New Message
