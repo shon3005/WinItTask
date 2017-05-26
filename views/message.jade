@@ -3,5 +3,5 @@ extends layout
 block content
     h1.
         Message
-    p
-        message
+    each key in title
+        p= key.message

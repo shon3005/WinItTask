@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var uuid = require('uuid');
+var Bitly = require('bitly');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -32,10 +33,8 @@ router.get('/message/:uuid', function(req,res) {
     var db = req.db;
     var uuid = req.params.uuid;
     var collection = db.get('usercollection');
-    collection.find({uuid : uuid},function(e, message){
-        res.render('message', {
-            "message" : message
-        });
+    collection.find({uuid:uuid}, {message: 1}, function(e, response) {
+        res.render('message', {title: response});
     });
 });
 
@@ -51,6 +50,13 @@ router.post('/addmessage', function(req, res) {
     var id = uuid.v4();
     // Set our collection
     var collection = db.get('usercollection');
+    // Twilio Credentials
+    var accountSid = 'ACe4769d82d799ca5b7718c8383eda6a64';
+    var authToken = '7b75eebe75a1888e93760eed7c4e3801';
+    //require the Twilio module and create a REST client
+    var client = require('twilio')(accountSid, authToken);
+    // bitly credentials
+    //let bitly = new Bitly('6ad259eff57d2925b95987dbf3c60471e2d26903');
 
     // Submit to the DB
     collection.insert({
@@ -63,18 +69,19 @@ router.post('/addmessage', function(req, res) {
             res.send(err);
         }
         else {
-            // Twilio Credentials
-            var accountSid = 'ACe4769d82d799ca5b7718c8383eda6a64';
-            var authToken = '7b75eebe75a1888e93760eed7c4e3801';
-            //require the Twilio module and create a REST client
-            var client = require('twilio')(accountSid, authToken);
             client.messages.create({
                 to: `+1${userNumber}`,
                 from: "+13477123158",
-                body: userMessage,
+                body: `localhost:3000/${id}`,
             }, function(err, message) {
                 console.log(message.sid);
             });
+            // bitly.shorten(`localhost:3000/message/${id}`)
+            //     .then(function(response) {
+            //         //console.log(response.data.url);
+            //     }, function(error) {
+            //         throw error;
+            //     });
             // And forward to success page
             res.redirect(`message/${id}`);
         }
