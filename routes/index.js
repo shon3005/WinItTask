@@ -69,19 +69,20 @@ router.post('/addmessage', function(req, res) {
             res.send(err);
         }
         else {
-            client.messages.create({
-                to: `+1${userNumber}`,
-                from: "+13477123158",
-                body: `localhost:3000/${id}`,
-            }, function(err, message) {
-                console.log(message.sid);
-            });
-            // bitly.shorten(`localhost:3000/message/${id}`)
-            //     .then(function(response) {
-            //         //console.log(response.data.url);
-            //     }, function(error) {
-            //         throw error;
-            //     });
+
+            bitly.shorten(`https://frozen-lowlands-75250.herokuapp.com/message/${id}`)
+                .then(function(response) {
+                    client.messages.create({
+                        to: `+1${userNumber}`,
+                        from: "+13477123158",
+                        body: `response.data.url`,
+                    }, function(err, message) {
+                        console.log(message.sid);
+                    });
+                    //console.log(response.data.url);
+                }, function(error) {
+                    throw error;
+                });
             // And forward to success page
             res.redirect(`message/${id}`);
         }
