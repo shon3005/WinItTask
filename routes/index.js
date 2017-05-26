@@ -59,19 +59,29 @@ router.post('/addmessage', function(req, res) {
         }
         else {
 
-            bitly.shorten(`https://frozen-lowlands-75250.herokuapp.com/message/${id}`)
-                .then(function(response) {
-                    client.messages.create({
-                        to: `+1${userNumber}`,
-                        from: "+13477123158",
-                        body: `${response.data.url}`,
-                    }, function(err, message) {
-                        console.log(message.sid);
-                    });
-                    //console.log(response.data.url);
-                }, function(error) {
-                    throw error;
-                });
+            client.messages.create({
+                to: `+1${userNumber}`,
+                from: "+13477123158",
+                body: `localhost:3000/message/${id}`,
+            }, function(err, message) {
+                console.log(message.sid);
+            });
+
+            /* bit.ly does not work with localhost */
+
+            // bitly.shorten(`https://frozen-lowlands-75250.herokuapp.com/message/${id}`)
+            //     .then(function(response) {
+            //         client.messages.create({
+            //             to: `+1${userNumber}`,
+            //             from: "+13477123158",
+            //             body: `${response.data.url}`,
+            //         }, function(err, message) {
+            //             console.log(message.sid);
+            //         });
+            //         //console.log(response.data.url);
+            //     }, function(error) {
+            //         throw error;
+            //     });
             // And forward to success page
             res.redirect(`message/${id}`);
         }
