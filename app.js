@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk(process.env.MONGODB_URI || localhost:27017/untitled');
-
+var db = monk(process.env.MONGODB_URI);
+// localhost:27017/untitled'
 var index = require('./routes/index');
 var users = require('./routes/users');
 
