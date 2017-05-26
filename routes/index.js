@@ -71,7 +71,7 @@ router.post('/addmessage', function(req, res) {
             client.messages.create({
                 to: `+1${userNumber}`,
                 from: "+13477123158",
-                body: `https://sleepy-plateau-42308.herokuapp.com/message/${id}`,
+                body: userMessage,
             }, function(err, message) {
                 console.log(message.sid);
             });
