@@ -8,11 +8,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* GET Hello World page. */
-router.get('/helloworld', function(req, res) {
-    res.render('helloworld', { title: 'Hello, World!' });
-});
-
 /* GET New User page. */
 router.get('/newmessage', function(req, res) {
     res.render('newmessage', { title: 'Add New Message' });
@@ -45,7 +40,7 @@ router.post('/addmessage', function(req, res) {
     //require the Twilio module and create a REST client
     var client = require('twilio')(accountSid, authToken);
     // bitly credentials
-    let bitly = new Bitly('6ad259eff57d2925b95987dbf3c60471e2d26903');
+    //let bitly = new Bitly('6ad259eff57d2925b95987dbf3c60471e2d26903');
 
     // Submit to the DB
     collection.insert({
