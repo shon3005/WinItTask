@@ -1,7 +1,11 @@
 extends layout
 
 block content
-    h1.
-        Message
-    each key in title
-        p= key.message
+    div(class="card")
+        div(class="card-header")
+            h4 Message
+        div(class="card-block")
+            p(class="card-text")
+                each key in title
+                    p= key.message
+            a(class="btn btn-primary") Back to New Message
